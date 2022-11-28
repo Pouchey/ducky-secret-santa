@@ -14,5 +14,19 @@ export default defineConfig({
       '_utils': path.resolve(__dirname, 'src/utils'),
     },
   },
-  plugins: [react()],
+  plugins: [
+    react({
+      include: "src/**/*.ts",
+      babel: {
+        plugins: [
+          [
+            'babel-plugin-styled-components',
+            {
+              pure: true,
+            },
+          ],
+        ],
+      }
+    }),
+  ]
 })

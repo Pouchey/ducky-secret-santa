@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@types/styled-components": "^5.1.26",
+    "babel-plugin-styled-components": "^2.0.7",
     "express": "^4.18.2",
     "path": "^0.12.7",
     "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "zod": "^3.19.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",

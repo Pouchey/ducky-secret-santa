@@ -9,6 +9,7 @@ export const StyledButton = styled.button<ButtonProps>`
   justify-content: center;
   width: 100%;
   padding: ${({ theme, size }) => theme.size[size || 'normal']};
+  background-color: ${({ color }) =>color };
   color: #fff;
   font-weight: ${({ theme }) => theme.weight.bold};
   font-size: ${({ theme, size }) => theme.size[size || 'normal']};
@@ -16,31 +17,6 @@ export const StyledButton = styled.button<ButtonProps>`
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  ${({ color, theme }) => {
-    switch (color) {
-      case 'primary':
-        return css`
-          background-color: ${theme.color.green1};
-          &:hover {
-            background-color: ${darken(0.1, theme.color.green1)};
-          }
-          &:active {
-            background-color: ${darken(0.2, theme.color.green1)};
-          }
-        `;
-      default:
-      case 'secondary':
-        return css`
-          background-color: ${theme.color.green2};
-          &:hover {
-            background-color: ${darken(0.1, theme.color.green2)};
-          }
-          &:active {
-            background-color: ${darken(0.2, theme.color.green2)};
-          }
-        `;
-    }
-  }}
   ${({ disabled }) =>
     disabled &&
     css`
