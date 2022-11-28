@@ -1,4 +1,4 @@
-import { ParticipantType } from "_modules/generator/types"
+import { ParticipantType } from "_modules/participants/types"
 import { StyledInput, StyledParticipant } from "./style"
 
 export default ({ 
@@ -6,7 +6,7 @@ export default ({
   onChange
 }:{
   participant:ParticipantType,
-  onChange:(id:number, participant:ParticipantType) => void
+  onChange:( participant:ParticipantType) => void
 }) => {
 
   const handleNameChange = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -14,7 +14,7 @@ export default ({
       ...participant,
       name: e.target.value
     }
-    onChange(participant.id, newParticipant)
+    onChange(newParticipant)
   }
 
   const handleEmailChange = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +22,7 @@ export default ({
       ...participant,
       email: e.target.value
     }
-    onChange(participant.id, newParticipant)
+    onChange(newParticipant)
   }
 
   return (
