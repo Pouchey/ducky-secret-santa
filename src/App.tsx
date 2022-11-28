@@ -1,11 +1,12 @@
-import Loader from '_components/loader'
+import UIWrapper from '_modules/ui/components';
 import Generator from '_modules/generator/components'
 
 function App() {
   return (
-    <div className="App">
+    <UIWrapper>
       <Generator />
-    </div>
+    </UIWrapper>
+
   )
 }
 

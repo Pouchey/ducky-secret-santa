@@ -39,6 +39,10 @@ export default ({
         value={participant.email}
         onChange={handleEmailChange}
       />
+      {/* 
+        Delete button
+        Open exlusion modal button
+      */}
     </StyledParticipant>
 
   )
