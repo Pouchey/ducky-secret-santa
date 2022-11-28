@@ -8,5 +8,5 @@ export interface ButtonProps
   label: string;
   size?: keyof ThemeType['size'];
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
