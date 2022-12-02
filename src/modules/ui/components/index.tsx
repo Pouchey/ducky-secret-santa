@@ -7,7 +7,7 @@ import Topbar from './topbar';
 export default ({ children }: { children: React.ReactNode }) => (
   <StyledMain>
     <UIProvider>
-      {/* <Topbar /> */}
+      <Topbar />
       <StyledContent>{children}</StyledContent>
       {/* <Loader/> */}
     </UIProvider>

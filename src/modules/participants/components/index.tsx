@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useLayoutEffect, useState } from "react"
 import Button from "_components/button"
 import { ParticipantType } from "_modules/participants/types"
 import { useParticipantsContext } from "_modules/participants/hooks/useContext"
@@ -34,6 +34,20 @@ export default ()  => {
       payload: participant
     })
   }
+
+  useLayoutEffect(() => {
+    const newParticipant = {
+      id: count,
+      name: "",
+      email: "",
+      exclude: []
+    }
+    setCount(count + 1);
+    dispatch({
+      type: "addParticipant",
+      payload: newParticipant
+    })
+  },[])
 
   return (
     <StyledContainer>

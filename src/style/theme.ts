@@ -4,7 +4,9 @@ export const color = {
   white: '#FFF',
   // Brand colors  
   // christmas red
-  primary: '#E65A5A'
+  primary: '#E65A5A',
+  // christmas green
+  secondary: '#5AE65A',
 };
 
 export const size = {

@@ -1,17 +1,13 @@
 import styled from 'styled-components';
 
 export const StyledMain = styled.main`
-  display: grid;
-  grid-template: ${({ theme }) => theme.metrics.topbarHeight} 1fr / 1fr;
-  grid-template-areas:
-    'topbar '
-    'content';
+  position:relative;
+  display: flex;
   height: 100vh;
   max-height: 100vh;
 `;
 
 export const StyledContent = styled.div`
-  grid-area: content;
   width: 100%;
   margin: 0 auto;
   overflow-y: auto;
