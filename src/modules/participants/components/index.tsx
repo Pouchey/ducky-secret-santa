@@ -35,6 +35,13 @@ export default ()  => {
     })
   }
 
+  const removeParticipant = (participant: ParticipantType) => {
+    dispatch({
+      type: "removeParticipant",
+      payload: participant
+    })
+  }
+
   useLayoutEffect(() => {
     const newParticipant = {
       id: count,
@@ -55,7 +62,12 @@ export default ()  => {
         <StyledParticipants>
           {
             participants.map((participant, index) => (
-              <Participant key={index} participant={participant} onChange={updateParticipant} />
+              <Participant 
+                key={index} 
+                participant={participant} 
+                onChange={updateParticipant}
+                onDelete={removeParticipant}
+              />
             ))
           }
         </StyledParticipants>    

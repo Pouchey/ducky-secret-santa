@@ -7,10 +7,12 @@ import Edit from "_assets/edit.svg"
 
 export default ({ 
   participant,
-  onChange
+  onChange,
+  onDelete,
 }:{
   participant:ParticipantType,
-  onChange:( participant:ParticipantType) => void
+  onChange:( participant:ParticipantType) => void,
+  onDelete:( participant:ParticipantType) => void,
 }) => {
 
   const handleNameChange = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -29,6 +31,11 @@ export default ({
     onChange(newParticipant)
   }
 
+  const handleDelete = (e:React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    onDelete(participant)
+  }
+
   return (
     <StyledParticipant>
       <StyledInput 
@@ -44,7 +51,7 @@ export default ({
         onChange={handleEmailChange}
       />
       <ButtonIcon glyph={Edit} size={40}/>
-      <ButtonIcon glyph={Trash} size={40}/>
+      <ButtonIcon glyph={Trash} size={40} onClick={handleDelete}/>
     </StyledParticipant>
 
   )

@@ -23,6 +23,18 @@ const ParticipantsReducer = (state: ParticipantsState, { type,payload }: Partici
         ),
       };
     case 'removeParticipant':
+      {
+        // remove partcipants in exclude lists
+        const newParticipants = state.participants.map((participant) => ({
+            ...participant,
+            exclude: participant.exclude.filter((id) => id !== payload.id),
+          }));
+        // remove participant
+        return {
+          ...state,
+          participants: newParticipants.filter((participant) => participant.id !== payload.id),
+        };
+      }
       return {
         ...state,
         participants: state.participants.filter((participant) => participant.id !== payload.id),
