@@ -3,10 +3,9 @@ export type ParticipantType = {
   name: string;
   email: string;
   exclude : number[];
-}
+} 
 
-
-export interface ParticipantsState {
+export interface ParticipantsState  {
   participants: ParticipantType[];
 }
 export const DefaultParticipantsState = {

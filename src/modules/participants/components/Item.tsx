@@ -1,5 +1,9 @@
+import ButtonIcon from "_components/button-icon"
 import { ParticipantType } from "_modules/participants/types"
 import { StyledInput, StyledParticipant } from "./style"
+
+import Trash from "_assets/trash.svg"
+import Edit from "_assets/edit.svg"
 
 export default ({ 
   participant,
@@ -39,10 +43,8 @@ export default ({
         value={participant.email}
         onChange={handleEmailChange}
       />
-      {/* 
-        Delete button
-        Open exlusion modal button
-      */}
+      <ButtonIcon glyph={Edit} size={40}/>
+      <ButtonIcon glyph={Trash} size={40}/>
     </StyledParticipant>
 
   )

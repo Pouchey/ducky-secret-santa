@@ -2,7 +2,9 @@ export const color = {
   // White and black
   black: '#1E1E1E',
   white: '#FFF',
-  // Brand colors
+  // Brand colors  
+  // christmas red
+  primary: '#E65A5A'
 };
 
 export const size = {

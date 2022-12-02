@@ -9,7 +9,7 @@ export const StyledButton = styled.button<ButtonProps>`
   justify-content: center;
   width: 100%;
   padding: ${({ theme, size }) => theme.size[size || 'normal']};
-  background-color: ${({ color }) =>color };
+  background-color: ${({ theme }) => theme.color.primary};
   color: #fff;
   font-weight: ${({ theme }) => theme.weight.bold};
   font-size: ${({ theme, size }) => theme.size[size || 'normal']};

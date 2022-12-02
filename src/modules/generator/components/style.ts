@@ -1,12 +1,21 @@
 import styled from 'styled-components';
-
 export const StyledContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background: rgb(53,114,141);
-  background: radial-gradient(ellipse at bottom, rgba(53,114,141,1) 14% , rgba(2,0,36,1) 95%);
 `;
+
+export const StyledImageBackground = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+`;
+
