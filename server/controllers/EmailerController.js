@@ -3,7 +3,9 @@ import handlebars from 'handlebars';
 import fs from "fs";
 import path from "path";
 import {fileURLToPath} from 'url';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
@@ -17,12 +19,14 @@ const template = handlebars.compile(source);
 const sendEmail = async (requesters ,subject,html) => {
 
   const transporter = nodeMailer.createTransport({
-    service: process.env.EMAIL_SERVICE,
+    host: 'smtp.gmail.com',
+    port: 465,
     auth: {
       user: process.env.EMAIL_USERNAME,
       pass: process.env.EMAIL_PASSWORD,
     },
   });
+
 
   const options = {
     from: process.env.EMAIL_FROM,
