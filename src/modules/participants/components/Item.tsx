@@ -51,18 +51,20 @@ export default ({
       <StyledInput 
         type="text"
         placeholder="Name"
+        required
         value={participant.name}
         onChange={handleNameChange}
       />
       <StyledInput
         type="email"
         placeholder="Email"
+        required
         value={participant.email}
         onChange={handleEmailChange}
       />
       <ButtonIcon glyph={Edit} size={40} onClick={handleEdit}/>
       <ButtonIcon glyph={Trash} size={40} onClick={handleDelete}/>
-      {isEditing && <Exclusion participant={participant} onChange={onChange}/>}
+      {isEditing && <Exclusion participant={participant} onChange={onChange} onClose={handleEdit}/>}
     </StyledParticipant>
   )
 }

@@ -40,8 +40,9 @@ export const ModalContainer = styled.div`
 export const ModalContent = styled.div`
   position: relative;
   width: 100%;
+  max-width: 600px;
   height: 600px;
-  padding: 20px;
+  padding:40px;
   background-color: ${({ theme }) => theme.color.secondary};
   border-radius: 8px;
   animation: ${modalAnimation} 0.3s ease-in-out;

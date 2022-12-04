@@ -4,7 +4,7 @@ import { randomGiveGifts } from "../utils";
 export const useGenerate = () => {
 
   const { state } = useParticipantsContext();
-
+  
   return () => {
   const generatedGifts = randomGiveGifts(state.participants);
 

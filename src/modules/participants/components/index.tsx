@@ -9,7 +9,7 @@ export default ()  => {
 
   const { state, dispatch } = useParticipantsContext();
   const participants = state.participants;
-  const [count, setCount] = useState<number>(0)
+  const [count, setCount] = useState<number>(1)
 
 
   const addParticipant = (e: React.MouseEvent<HTMLButtonElement>) => {
