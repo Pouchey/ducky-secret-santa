@@ -6,10 +6,22 @@ export const canGenerate = (participants: ParticipantType[]) : boolean => {
   return true;
 }
 
+export const isGenerateSuccess = (generatedGifts: GeneratedGiftType[]) : boolean => {
+  
+  return !generatedGifts.every(gift => {
+    //  object gifters and receivers are not undefined or null
+    return gift.gifter && gift.receiver;
+  });
+
+}
+
+const MAX_TRIES = 1000;
+
 export const randomGiveGifts = (participants: ParticipantType[]) : GeneratedGiftType[] => {
 
   let generatedGifts: GeneratedGiftType[] = [];
   let participantsCopy: ParticipantType[] = []
+  let tries = 0;
 
   do{
 
@@ -30,9 +42,14 @@ export const randomGiveGifts = (participants: ParticipantType[]) : GeneratedGift
       participantsCopy.splice(participantsCopy.indexOf(gift), 1);
     })
 
+    tries++;
 
   }
-  while(participantsCopy.length > 0)
+  while(isGenerateSuccess(generatedGifts) && tries < MAX_TRIES);
+
+  if(tries >= MAX_TRIES){
+    throw new Error("Could not generate gifts");
+  }
 
   return generatedGifts;
 }

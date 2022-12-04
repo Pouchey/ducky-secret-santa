@@ -6,21 +6,28 @@ export const useGenerate = () => {
   const { state } = useParticipantsContext();
   
   return () => {
-  const generatedGifts = randomGiveGifts(state.participants);
+   
+    try{
+      const generatedGifts = randomGiveGifts(state.participants);
 
-    fetch('/api/generate', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({generatedGifts}),
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+
+      fetch('/api/generate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({generatedGifts}),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+    catch(e){
+      console.error(e);
+    }
   };
 }
