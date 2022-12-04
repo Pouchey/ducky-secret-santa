@@ -11,7 +11,7 @@ export const useGenerate = () => {
       const generatedGifts = randomGiveGifts(state.participants);
 
 
-      fetch('/api/generate', {
+      fetch('http://localhost:5173/api/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
